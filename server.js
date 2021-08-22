@@ -1,20 +1,23 @@
-import express from "express";
-import cors from "cors";
-import * as path from "path";
-import dotenv from "dotenv";
+const express = require("express");
+const cors= require ("cors");
+const path =  require("path");
+const dotenv = require("dotenv");
+const routes =require("./routes/tweets");
+const bodyParser = require("body-parser");
 
 dotenv.config();
-const __dirname = path.resolve();
 const app = express();
 
-app.use(express.json());
+app.use(bodyParser.json());
 app.use(cors());
 
+app.use("/api", routes);
+
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+  app.use(express.static("client/dist"));
 
   app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+    res.sendFile(path.join(__dirname, "client", "dist","index.html"));
   });
 }
 
