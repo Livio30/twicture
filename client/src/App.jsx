@@ -1,45 +1,22 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { HStack, Spacer, VStack, Box } from "@chakra-ui/react";
+import Editor from "./components/Editor/Editor";
+import Header from "./components/Header/Header";
+import TweetCanvas from "./components/TweetCanvas/TweetCanvas";
+import TweetLinkInput from "./components/TweetLinkInput/TweetLinkInput";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+    <div>
+      <Header />
+      <VStack>
+        <TweetLinkInput />
+        <Box w="90vw" p="4"display={{ md: "flex" }}>
+          <TweetCanvas />
+          <Editor />
+        </Box>
+      </VStack>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
