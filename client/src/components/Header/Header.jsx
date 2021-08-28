@@ -19,6 +19,7 @@ function Header() {
         </Heading>
         <Spacer />
         <IconButton
+          _focus={{boxShadow:"none"}}
           icon={<FaInstagram />}
           variant="ghost"
           colorScheme="cyan"
@@ -29,6 +30,7 @@ function Header() {
           href="https://www.instagram.com/_mr.codeaddict_/"
           />
         <IconButton
+          _focus={{boxShadow:"none"}}
           icon={<FaGithub />}
           variant="ghost"
           colorScheme="cyan"
@@ -41,6 +43,7 @@ function Header() {
           href="https://github.com/Livio30"
         />
         <IconButton
+          _focus={{boxShadow:"none"}}
           icon={isDark ? <FaSun /> : <FaMoon />}
           variant="ghost"
           onClick={toggleColorMode}

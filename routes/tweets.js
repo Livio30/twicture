@@ -7,9 +7,10 @@ const dotenv = require("dotenv");
 const router = express.Router();
 
 dotenv.config();
-
 router.post("/tweets", (req, res) => {
-  const tweetId = "1364276143088525314";
+  const tweetId = req.body.tweetId;
+  console.log(tweetId);
+  // const tweetId = "1364276143088525314";
 
   const expansions =
     "author_id,attachments.poll_ids,referenced_tweets.id,attachments.media_keys";
