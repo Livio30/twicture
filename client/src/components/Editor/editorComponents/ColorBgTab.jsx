@@ -1,10 +1,11 @@
 import { Box, Center, Text } from "@chakra-ui/react";
-import { useState } from "react";
+import { useContext } from "react";
 import { ChromePicker } from "react-color";
+import { TweetContext } from "../../../context/TweetContext";
 import "./ColorBgTab.css";
 
 function ColorBgTab() {
-  const [bgColor, setBgColor] = useState("#ffffff");
+  const {bgColor, setBgColor} = useContext(TweetContext);
   return (
     <Box>
       <Text>Choose color</Text>

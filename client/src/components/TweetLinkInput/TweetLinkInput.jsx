@@ -4,7 +4,7 @@ import { TweetContext } from "../../context/TweetContext";
 
 function TweetLinkInput() {
   const [search, setSearch] = useState("");
-  const { tweetLink, setTweetLink, setTweetData } =
+  const { tweetLink, setTweetLink, setTweetText } =
     useContext(TweetContext);
   const updateSearch = (e) => {
     setSearch(e.target.value);
@@ -25,7 +25,7 @@ function TweetLinkInput() {
       .then((res) => res.json())
       .then((data) => {
         console.log("Success: ", data);
-        setTweetData(data.data.text)
+        setTweetText(data.data.text)
       })
       .catch((err) => {
         console.error("Error: ", err);
