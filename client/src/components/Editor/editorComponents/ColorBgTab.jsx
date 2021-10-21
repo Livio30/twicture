@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { ChromePicker } from "react-color";
 import { TweetContext } from "../../../context/TweetContext";
 import "./ColorBgTab.css";
+import TweetBg from "./TweetBg";
 
 function ColorBgTab() {
   const {bgColor, setBgColor} = useContext(TweetContext);
@@ -16,7 +17,7 @@ function ColorBgTab() {
           onChange={(updatedColor) => setBgColor(updatedColor.hex)}
         />
       </Center>
-      <Text>{bgColor}</Text>
+      <TweetBg/>
     </Box>
   );
 }

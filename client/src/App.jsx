@@ -10,14 +10,35 @@ function App() {
   const [tweetLink, setTweetLink] = useState("");
   const [tweetText, setTweetText] = useState("");
   const [tweetUser, setTweetUser] = useState("");
-  const [backgroundType, setBackgroundType] = useState("");
+  const [backgroundType, setBackgroundType] = useState("Color");
   const [bgColor, setBgColor] = useState("#ffffff");
-
+  const [tweetBgColor, setTweetBgColor] = useState("");
+  const [bgImageUrl, setBgImageUrl] = useState("");
+  const [tweetTextColor, setTweetTextColor] = useState("");
   return (
     <div>
       <Header />
       <VStack>
-        <TweetContext.Provider value={{tweetLink, setTweetLink, tweetText, setTweetText, tweetUser, setTweetUser, backgroundType, setBackgroundType, bgColor, setBgColor}}>
+        <TweetContext.Provider
+          value={{
+            tweetLink,
+            setTweetLink,
+            tweetText,
+            setTweetText,
+            tweetUser,
+            setTweetUser,
+            backgroundType,
+            setBackgroundType,
+            bgColor,
+            setBgColor,
+            tweetBgColor,
+            setTweetBgColor,
+            bgImageUrl,
+            setBgImageUrl,
+            tweetTextColor,
+            setTweetTextColor,
+          }}
+        >
           <TweetLinkInput />
           <Box w="90vw" p="4" display={{ md: "flex" }}>
             <TweetCanvas />
